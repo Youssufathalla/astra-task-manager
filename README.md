@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="Images/logo.png" alt="Astra Logo" width="720">
+</p>
+
 # ASTRA — Desktop Task Manager
 
 **ASTRA** is a modern desktop task manager built with **Python** and **Tkinter**, designed to make task planning feel clean, fast, and focused.
 
-The app combines a polished dark dashboard interface with practical productivity features such as task filtering, category management, priority tracking, due-date indicators, notes, and automatic local saving.
+It combines a polished dark dashboard interface with practical productivity features such as task filtering, category management, priority tracking, due-date indicators, task notes, and automatic local saving.
 
 ![Astra Task Manager Screenshot](Images/screenshot.png)
 
@@ -10,10 +14,19 @@ The app combines a polished dark dashboard interface with practical productivity
 
 ## Overview
 
-ASTRA was built as a portfolio-focused Python desktop application that goes beyond a basic to-do list.  
-It uses custom Tkinter components, a modular file structure, JSON-based persistence, and a custom task board interface to create a more professional user experience.
+ASTRA was built as a portfolio-focused Python desktop application that goes beyond a basic to-do list.
 
-The goal of the project is to demonstrate practical Python skills, object-oriented programming, GUI development, file handling, input validation, and clean project organization.
+The project demonstrates practical Python skills through a complete desktop application with a custom UI system, reusable Tkinter components, local JSON persistence, task filtering, category management, and a custom task board interface.
+
+The goal of ASTRA is to show strong understanding of:
+
+- Python fundamentals
+- Object-oriented programming
+- GUI development
+- File handling
+- Input validation
+- Modular project structure
+- User-focused interface design
 
 ---
 
@@ -31,12 +44,14 @@ The goal of the project is to demonstrate practical Python skills, object-orient
 
 ### Dashboard
 
-- Total task count
-- Completed task count
-- In-progress task count
-- Pending task count
-- High-priority task count
-- Completion progress bar
+ASTRA includes a live dashboard that tracks:
+
+- Total tasks
+- Completed tasks
+- In-progress tasks
+- Pending tasks
+- High-priority tasks
+- Completion progress percentage
 
 ### Smart Due-Date System
 
@@ -64,6 +79,8 @@ It also includes a search field for quickly finding tasks by title, category, pr
 
 ### Category Manager
 
+ASTRA includes a built-in category manager that allows users to:
+
 - Add new categories
 - Rename existing categories
 - Delete categories
@@ -89,7 +106,7 @@ The JSON file is ignored by Git using `.gitignore`, so personal task data is not
 |---|---|
 | Python | Main programming language |
 | Tkinter | Desktop GUI framework |
-| Canvas | Custom rounded UI elements and task board rendering |
+| Canvas | Custom rounded UI elements and custom task board rendering |
 | JSON | Local task/category storage |
 | OOP | Reusable widgets and organized application structure |
 
@@ -99,21 +116,24 @@ The JSON file is ignored by Git using `.gitignore`, so personal task data is not
 
 ```text
 astra-task-manager/
-├── main.py              # Application entry point
-├── app.py               # Main application logic and UI assembly
-├── config.py            # Colors, text, constants, and starting data
-├── widgets.py           # Reusable custom Tkinter widgets
-├── task_table.py        # Custom Canvas-based task board
-├── utils.py             # Helper functions
+├── main.py                # Application entry point
+├── app.py                 # Main application logic and UI assembly
+├── config.py              # Colors, text, constants, and starting data
+├── widgets.py             # Reusable custom Tkinter widgets
+├── task_table.py          # Custom Canvas-based task board
+├── utils.py               # Helper functions
 ├── Images/
-│   └── screenshot.png   # README screenshot
-├── .gitignore           # Files ignored by Git
-└── README.md            # Project documentation
+│   ├── logo.png           # README logo/banner
+│   ├── screenshot.png     # README screenshot
+│   ├── Icon.jpeg          # Astra icon image
+│   └── astra_icon.ico     # Optional Windows executable icon
+├── .gitignore             # Files ignored by Git
+└── README.md              # Project documentation
 ```
 
 ---
 
-## How to Run
+## How to Run from Source
 
 ### 1. Clone the repository
 
@@ -133,7 +153,52 @@ cd astra-task-manager
 python main.py
 ```
 
-No external Python packages are required. ASTRA uses Python's built-in libraries.
+No external Python packages are required to run the source version. ASTRA uses Python's built-in libraries.
+
+---
+
+## Windows Executable
+
+ASTRA can also be packaged as a standalone Windows executable using **PyInstaller**.
+
+The generated executable should not be committed directly to the repository. Instead, it should be uploaded through **GitHub Releases** to keep the source code clean.
+
+### Build the executable locally
+
+Install the required build tools:
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install pyinstaller pillow
+```
+
+Convert the app icon to `.ico` format:
+
+```powershell
+python -c "from PIL import Image, ImageOps; img=Image.open('Images/Icon.jpeg'); img=ImageOps.fit(img, (256,256)); img.save('Images/astra_icon.ico', sizes=[(256,256),(128,128),(64,64),(48,48),(32,32),(16,16)])"
+```
+
+Build the executable:
+
+```powershell
+pyinstaller --onefile --windowed --name Astra --icon=Images/astra_icon.ico --add-data "Images;Images" main.py
+```
+
+After the build finishes, the executable will be created at:
+
+```text
+dist/Astra.exe
+```
+
+### Recommended release method
+
+The executable should be uploaded to the repository's **Releases** section:
+
+```text
+GitHub Repository → Releases → Create a new release → Upload Astra.exe
+```
+
+This keeps the main repository focused on source code while still allowing users to download the Windows app easily.
 
 ---
 
@@ -147,9 +212,11 @@ This project demonstrates:
 - Custom reusable widgets
 - Event-driven programming
 - Input validation
-- File handling with JSON
+- JSON file handling
+- Local data persistence
 - Modular code organization
 - Search and filtering logic
+- Custom Canvas-based interface design
 - UI/UX design thinking
 - GitHub project documentation
 
@@ -157,7 +224,9 @@ This project demonstrates:
 
 ## Why This Project Is More Than a Basic To-Do List
 
-Most beginner task manager projects use simple buttons, entries, and list boxes. ASTRA is different because it includes:
+Many beginner task manager projects use simple buttons, entries, and list boxes. ASTRA was designed to feel closer to a real desktop productivity tool.
+
+It includes:
 
 - A custom-designed dark dashboard interface
 - A reusable component system
@@ -167,8 +236,9 @@ Most beginner task manager projects use simple buttons, entries, and list boxes.
 - Notes/details support
 - Due-date intelligence
 - A clean multi-file architecture
+- A branded visual identity
 
-These choices make the project closer to a real desktop productivity tool rather than a simple practice script.
+These choices make the project stronger as a portfolio application because it shows both programming ability and attention to user experience.
 
 ---
 
@@ -183,12 +253,13 @@ Planned improvements include:
 - Task statistics and productivity charts
 - Light/dark theme switching
 - Drag-and-drop task ordering
+- Optional cloud sync
 
 ---
 
 ## Status
 
-ASTRA is currently a functional desktop application with core task management, filtering, category management, notes, and automatic saving.
+ASTRA is currently a functional desktop application with core task management, filtering, category management, notes, due-date indicators, and automatic saving.
 
 ---
 
