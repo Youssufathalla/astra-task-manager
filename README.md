@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Images/logo.png" alt="Astra Logo" width="720">
+  <img src="Images/logo.jpeg" alt="Astra Logo" width="720">
 </p>
 
 # ASTRA — Desktop Task Manager
