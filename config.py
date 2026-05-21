@@ -1,3 +1,71 @@
+from datetime import date, timedelta
+
+
+# Starting data
+STARTING_CATEGORIES = [
+    "Academic",
+    "Development",
+    "Career",
+    "Fitness",
+    "Personal",
+    "Admin"
+]
+
+
+def sample_date(days_from_today):
+    return (date.today() + timedelta(days=days_from_today)).isoformat()
+
+
+STARTING_TASKS = [
+    (
+        "Finalize Astra README and project screenshots",
+        "Development",
+        "High",
+        sample_date(0),
+        "No time",
+        "In Progress"
+    ),
+    (
+        "Review PCAP object-oriented programming notes",
+        "Academic",
+        "Medium",
+        sample_date(1),
+        "07:30 PM",
+        "Pending"
+    ),
+    (
+        "Refactor task manager modules",
+        "Development",
+        "High",
+        sample_date(2),
+        "06:00 PM",
+        "Pending"
+    ),
+    (
+        "Update LinkedIn project description",
+        "Career",
+        "Medium",
+        sample_date(3),
+        "No time",
+        "Pending"
+    ),
+    (
+        "Complete strength and cardio session",
+        "Fitness",
+        "Low",
+        sample_date(4),
+        "08:00 PM",
+        "Completed"
+    ),
+    (
+        "Organize local project files",
+        "Admin",
+        "Low",
+        sample_date(5),
+        "No time",
+        "Pending"
+    ),
+]
 """Configuration constants for the Astra task manager.
 
 This file keeps colors, text, starting data, and table definitions in one place.
@@ -82,20 +150,76 @@ CONFIRM_CANCEL_HOVER = "#cbd5e1"
 POPUP_BG = "#f8fafc"
 POPUP_TEXT = "#334155"
 
-# Starting data
-STARTING_CATEGORIES = ["Uni", "Work", "Gym", "Personal", "Projects"]
-
 MONTHS = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ]
 
+# Starting data
+
+STARTING_CATEGORIES = [
+    "Academic",
+    "Development",
+    "Career",
+    "Fitness",
+    "Personal",
+    "Admin"
+]
+
+
+def sample_date(days_from_today):
+    return (date.today() + timedelta(days=days_from_today)).isoformat()
+
+
 STARTING_TASKS = [
-    ("Finish Python task manager", "Projects", "High", "2026-05-20", "No time", "Pending"),
-    ("Study PCAP OOP module", "Uni", "Medium", "2026-05-22", "02:00 PM", "Pending"),
-    ("Push project to GitHub", "Projects", "High", "2026-05-21", "06:30 PM", "In Progress"),
-    ("Gym session", "Gym", "Low", "2026-05-19", "08:00 PM", "Completed"),
-    ("Review cybersecurity notes", "Personal", "Medium", "2026-05-24", "No time", "Pending"),
+    (
+        "Finalize Astra README and project screenshots",
+        "Development",
+        "High",
+        sample_date(0),
+        "No time",
+        "In Progress"
+    ),
+    (
+        "Review PCAP object-oriented programming notes",
+        "Academic",
+        "Medium",
+        sample_date(1),
+        "07:30 PM",
+        "Pending"
+    ),
+    (
+        "Refactor task manager modules",
+        "Development",
+        "High",
+        sample_date(2),
+        "06:00 PM",
+        "Pending"
+    ),
+    (
+        "Update LinkedIn project description",
+        "Career",
+        "Medium",
+        sample_date(3),
+        "No time",
+        "Pending"
+    ),
+    (
+        "Complete strength and cardio session",
+        "Fitness",
+        "Low",
+        sample_date(4),
+        "08:00 PM",
+        "Completed"
+    ),
+    (
+        "Organize local project files",
+        "Admin",
+        "Low",
+        sample_date(5),
+        "No time",
+        "Pending"
+    ),
 ]
 
 DASHBOARD_CARDS = [
@@ -133,10 +257,6 @@ TABLE_TAG_COLORS = {
 PRIORITY_RANK = {"High": 1, "Medium": 2, "Low": 3}
 STATUS_RANK = {"Pending": 1, "In Progress": 2, "Completed": 3}
 
-
-# =============================================================================
-# SMALL HELPER FUNCTIONS
-# =============================================================================
 
 # =============================================================================
 # FULL APP VERSION CONSTANTS
@@ -188,5 +308,3 @@ BADGE_COLORS = {
 DUE_STATE_RANK = {"Overdue": 1, "Today": 2, "Tomorrow": 3, "Upcoming": 4}
 
 
-# =============================================================================
-# CUSTOM CANVAS TASK TABLE
