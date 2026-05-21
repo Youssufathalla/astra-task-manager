@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Local saved user data
+astra_tasks.json
+
+# Editor/system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+build/
+dist/
+*.spec
+*.exe
