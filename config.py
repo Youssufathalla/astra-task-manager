@@ -1,71 +1,6 @@
 from datetime import date, timedelta
 
-
-# Starting data
-STARTING_CATEGORIES = [
-    "Academic",
-    "Development",
-    "Career",
-    "Fitness",
-    "Personal",
-    "Admin"
-]
-
-
-def sample_date(days_from_today):
-    return (date.today() + timedelta(days=days_from_today)).isoformat()
-
-
-STARTING_TASKS = [
-    (
-        "Finalize Astra README and project screenshots",
-        "Development",
-        "High",
-        sample_date(0),
-        "No time",
-        "In Progress"
-    ),
-    (
-        "Review PCAP object-oriented programming notes",
-        "Academic",
-        "Medium",
-        sample_date(1),
-        "07:30 PM",
-        "Pending"
-    ),
-    (
-        "Refactor task manager modules",
-        "Development",
-        "High",
-        sample_date(2),
-        "06:00 PM",
-        "Pending"
-    ),
-    (
-        "Update LinkedIn project description",
-        "Career",
-        "Medium",
-        sample_date(3),
-        "No time",
-        "Pending"
-    ),
-    (
-        "Complete strength and cardio session",
-        "Fitness",
-        "Low",
-        sample_date(4),
-        "08:00 PM",
-        "Completed"
-    ),
-    (
-        "Organize local project files",
-        "Admin",
-        "Low",
-        sample_date(5),
-        "No time",
-        "Pending"
-    ),
-]
+ 
 """Configuration constants for the Astra task manager.
 
 This file keeps colors, text, starting data, and table definitions in one place.
@@ -230,22 +165,6 @@ DASHBOARD_CARDS = [
     ("High Priority", "high_priority", RED),
 ]
 
-ACTION_BUTTONS = [
-    ("+ Add", BLUE, BLUE_HOVER, "add_task", False),
-    ("✎ Update", GRAY_BUTTON, GRAY_BUTTON_HOVER, "update_selected_task", True),
-    ("▶ Start", PURPLE, PURPLE_HOVER, "start_task", True),
-    ("✓ Complete", GREEN_BUTTON, GREEN_BUTTON_HOVER, "mark_complete", True),
-    ("🗑 Delete", RED, RED_HOVER, "delete_task", True),
-]
-
-TABLE_COLUMNS = (
-    ("title", "Task", 360, 240, None),
-    ("category", "Category", 135, 110, "center"),
-    ("priority", "Priority", 115, 95, "center"),
-    ("due_date", "Due Date", 135, 110, "center"),
-    ("due_time", "Due Time", 125, 100, "center"),
-    ("status", "Status", 135, 110, "center"),
-)
 
 TABLE_TAG_COLORS = {
     "Pending": "#fbbf24",
